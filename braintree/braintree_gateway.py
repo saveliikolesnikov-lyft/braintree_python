@@ -27,11 +27,11 @@ from app.library.braintree_python.braintree.us_bank_account_gateway import UsBan
 from app.library.braintree_python.braintree.us_bank_account_verification_gateway import UsBankAccountVerificationGateway
 from app.library.braintree_python.braintree.webhook_notification_gateway import WebhookNotificationGateway
 from app.library.braintree_python.braintree.webhook_testing_gateway import WebhookTestingGateway
-import braintree.configuration
+from app.library.braintree_python.braintree.configuration import Configuration
 
 class BraintreeGateway(object):
     def __init__(self, config=None, **kwargs):
-        if isinstance(config, braintree.configuration.Configuration):
+        if isinstance(config, Configuration):
             self.config = config
         else:
             self.config = Configuration(
